@@ -26,6 +26,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
     padding: 0 24px;
 }
 
@@ -42,6 +43,7 @@ form{
     flex-direction: column;
     width: 100%;
     max-width: 440px;
+    z-index: 9;
 }
 
 .input{
@@ -69,6 +71,7 @@ form input[type=text], form input[type=password], form input[type=email]{
     margin-bottom: 18px;
     transition:  0.5s ease-in;
     border: none;
+    z-index: 2;
 }
 
 .button:hover{
@@ -98,9 +101,94 @@ form input[type=text], form input[type=password], form input[type=email]{
 
 .right{
     flex: 1;
+    background-color: #0056fb;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
     /* width: 100%;
     max-width: 50%; */
 }
 
+.info-img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 18px;
+}
 
+.subtitle{
+    max-width: 400px;
+    font-size: 38px;
+    color:#FFF;
+    margin-bottom: 18px;
+}
 
+.description{
+    max-width: 400px;
+    line-height: 150%;
+    color: #FFF;
+}
+
+form::before{
+    content: '';
+    position: absolute;
+    background-image: url('assets/code.svg');
+    background-size: 90px;
+    background-repeat: no-repeat;
+    z-index: 1;
+    width: 90px;
+    height: 90px;
+    bottom: -50px;
+    right: -35px;
+}
+
+@media (max-width:700px){
+    .container{
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .left{
+        width: 85%;
+        padding: 24px 0;
+    }
+
+    .lef h1{
+        margin-bottom: 18px;
+    }
+
+    .right{
+        padding: 32px 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    form::before{
+        background-size: 70px;
+        width: 84px;
+        height: 84px;
+        bottom: -46px;
+        right: -20px;
+    }
+}
+
+@media (max-width:500px){
+    .info-img{
+        width: 85%;
+    }
+
+    .subtitle{
+        margin-bottom: 18px;
+        font-size: 32px;
+        padding: 0 14px;
+        text-align: center;
+    }
+
+    .description{
+        padding: 0 14px;
+       
+    }
+}
